@@ -1,0 +1,32 @@
+[tool.poetry]
+name = "cloud-detection"
+version = "1.0.0"
+description = ""
+authors = []
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.12"
+opencv-python = "^4.9.0.80"
+numpy = "<2.0.0"
+fastapi = {extras = ["standard"], version = "^0.115.11"}
+torch = { version = "2.6.0", source = "pytorch-cpu" }
+torchvision = { version = "^0.21.0", source = "pytorch-cpu" }
+
+[[tool.poetry.source]]
+name = "PyPI"
+priority = "primary"
+
+[[tool.poetry.source]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+priority="supplemental"
+
+[tool.poetry.group.dev.dependencies]
+black = "^24.10.0"
+pyright = "^1.1.392.post0"
+pytest = "^8.3.4"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
